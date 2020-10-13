@@ -1,0 +1,35 @@
+.contactContainer code {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.indentOne {
+  margin-left: 2em;
+}
+
+/* my name and email address hover and tooltip */
+.hoverAndTooltip {
+  position: relative;
+}
+.hoverAndTooltip:hover {
+  cursor: pointer;
+}
+.hoverAndTooltip .hoverAndTooltipTooltipText {
+  visibility: hidden;
+  position: absolute;
+  bottom: 50%;
+  white-space: nowrap;
+  color: white;
+  background-color: #00001a;
+  padding: 0.4rem;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+.hoverAndTooltip:hover .hoverAndTooltipTooltipText {
+  visibility: visible;
+}
+
+.yawd {
+  font-size: 0.6rem;
+  margin-top: 2rem;
+}

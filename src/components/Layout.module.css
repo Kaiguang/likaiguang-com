@@ -1,0 +1,91 @@
+/* stick footer to the bottom of the viewport */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex-grow: 1;
+}
+header,
+nav,
+footer {
+  flex-shrink: 0;
+}
+
+/* background colors */
+header,
+footer {
+  background-color: #16233f;
+}
+nav {
+  background-color: #00001a;
+}
+
+header img {
+  display: inline;
+  max-width: 80px;
+}
+
+/* center the containers */
+.headerContainer,
+.navContainer,
+.mainContainer,
+.footerContainer {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.headerContent,
+.mainContent,
+.footerContent,
+.navContent {
+  margin: 0 1rem;
+}
+
+.mainContent {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* nav styles */
+.navContent {
+  display: flex;
+}
+.navContent a {
+  color: white;
+  text-decoration: none;
+  margin-right: 2rem;
+  padding: 0.8rem 0;
+}
+.navContent a:hover,
+.navContent a.selected {
+  color: #ee82ee;
+}
+
+.footerContent {
+  color: white;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+}
+
+/* my email address hover and tooltip */
+.myEmail {
+  position: relative;
+}
+.myEmail:hover {
+  cursor: pointer;
+}
+.myEmail .myEmailTooltipText {
+  visibility: hidden;
+  position: absolute;
+  bottom: 50%;
+  white-space: nowrap;
+  background-color: #00001a;
+  padding: 0.2rem;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+.myEmail:hover .myEmailTooltipText {
+  visibility: visible;
+}
