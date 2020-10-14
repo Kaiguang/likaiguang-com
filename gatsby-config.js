@@ -52,6 +52,17 @@ module.exports = {
         hostname: `likaiguang.com`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          `UA-180583632-1`, // Google Analytics
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
