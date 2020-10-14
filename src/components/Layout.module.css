@@ -16,10 +16,10 @@ footer {
 /* background colors */
 header,
 footer {
-  background-color: #16233f;
+  background-color: #051d3e;
 }
 nav {
-  background-color: #00001a;
+  background-color: #030817;
 }
 
 header img {
@@ -51,16 +51,18 @@ header img {
 /* nav styles */
 .navContent {
   display: flex;
+  justify-content: space-between;
 }
 .navContent a {
   color: white;
+  font-weight: bold;
   text-decoration: none;
   margin-right: 2rem;
   padding: 0.8rem 0;
 }
 .navContent a:hover,
 .navContent a.selected {
-  color: #ee82ee;
+  color: #5083ab;
 }
 
 .footerContent {
