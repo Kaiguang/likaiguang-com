@@ -34,40 +34,42 @@ export default function Layout({ children, selectedNavLink }) {
             </Link>
           </div>
         </div>
-      </header>
 
-      <nav>
-        <div className={styles.navContainer}>
-          <div className={styles.navContent}>
-            <Link
-              to="/"
-              className={selectedNavLink === "Home" ? styles.selected : null}
-            >
-              Home
-            </Link>
-            <Link
-              to="/Projects"
-              className={
-                selectedNavLink === "Projects" ? styles.selected : null
-              }
-            >
-              Projects
-            </Link>
-            <Link
-              to="/Blog"
-              className={selectedNavLink === "Blog" ? styles.selected : null}
-            >
-              Blog
-            </Link>
-            <Link
-              to="/Contact"
-              className={selectedNavLink === "Contact" ? styles.selected : null}
-            >
-              Contact
-            </Link>
+        <nav>
+          <div className={styles.navContainer}>
+            <div className={styles.navContent}>
+              <Link
+                to="/"
+                className={selectedNavLink === "Home" ? styles.selected : null}
+              >
+                Home
+              </Link>
+              <Link
+                to="/Projects"
+                className={
+                  selectedNavLink === "Projects" ? styles.selected : null
+                }
+              >
+                Projects
+              </Link>
+              <Link
+                to="/Blog"
+                className={selectedNavLink === "Blog" ? styles.selected : null}
+              >
+                Blog
+              </Link>
+              <Link
+                to="/Contact"
+                className={
+                  selectedNavLink === "Contact" ? styles.selected : null
+                }
+              >
+                Contact
+              </Link>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
       <main>
         <div className={styles.mainContainer}>
