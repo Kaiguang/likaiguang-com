@@ -73,18 +73,17 @@ Check Zsh manual or user guide for [prompt expansion](http://zsh.sourceforge.net
 
 ### Aliases
 
-```
+```shell
 # aliases
 alias ll='ls -alF'
 alias sd='say "process completed."' # (macOS)
 alias history='history 1'
 
-# aliases for git
+# git
 alias gs='git status'
 alias gc='git commit'
 alias gb='git branch'
-alias gch='git checkout'
-alias gl='git log --oneline --graph -n 20'
+alias gl='git log --remotes --branches --tags --graph --oneline'
 ```
 
 ## Note
