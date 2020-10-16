@@ -1,5 +1,5 @@
 ---
-title: Preview Gatsby Website on Both Mac and iPhone
+title: Preview Gatsby Websites on Both Mac and iPhone
 date: 2020-10-04
 tags:
   - Gatsby

@@ -1,5 +1,5 @@
 ---
-title: Personalize Shell (Zsh)
+title: Personalize Zsh Shell
 date: 2020-06-21
 originalDate: 2019-08-24
 tags:
