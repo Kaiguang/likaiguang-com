@@ -40,28 +40,28 @@ export default function Layout({ children, selectedNavLink }) {
             <div className={styles.navContent} data-nosnippet>
               <Link
                 to="/"
-                className={selectedNavLink === "Home" ? styles.selected : null}
+                className={selectedNavLink === "home" ? styles.selected : null}
               >
                 Home
               </Link>
               <Link
-                to="/Projects"
+                to="/projects"
                 className={
-                  selectedNavLink === "Projects" ? styles.selected : null
+                  selectedNavLink === "projects" ? styles.selected : null
                 }
               >
                 Projects
               </Link>
               <Link
-                to="/Blog"
-                className={selectedNavLink === "Blog" ? styles.selected : null}
+                to="/blog"
+                className={selectedNavLink === "blog" ? styles.selected : null}
               >
                 Blog
               </Link>
               <Link
-                to="/Contact"
+                to="/contact"
                 className={
-                  selectedNavLink === "Contact" ? styles.selected : null
+                  selectedNavLink === "contact" ? styles.selected : null
                 }
               >
                 Contact

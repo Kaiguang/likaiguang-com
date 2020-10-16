@@ -4,7 +4,7 @@ import styles from "./Projects.module.css";
 
 export default function Projects() {
   return (
-    <Layout selectedNavLink="Projects">
+    <Layout selectedNavLink="projects">
       <div className={styles.projectContainer}>
         <a
           href="https://housework.likaiguang.com/"
