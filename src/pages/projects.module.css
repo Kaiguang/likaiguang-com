@@ -1,0 +1,17 @@
+.projectContainer {
+  padding-bottom: 6rem;
+}
+
+.projectContainer ul {
+  margin-top: 0;
+}
+
+.projectName {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.strikeThrough {
+  color: rgba(0, 0, 0, 0.3);
+}
