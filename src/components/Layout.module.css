@@ -51,7 +51,6 @@ header img {
 /* nav styles */
 .navContent {
   display: flex;
-  justify-content: space-around;
 }
 .navContent a {
   color: white;
