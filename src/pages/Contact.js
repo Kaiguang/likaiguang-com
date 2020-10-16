@@ -36,7 +36,7 @@ export default function Contact() {
   };
 
   return (
-    <Layout selectedNavLink="Contact">
+    <Layout selectedNavLink="contact">
       <div className={styles.contactContainer}>
         <code>{`---`}</code>
         <code>

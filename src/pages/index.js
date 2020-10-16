@@ -9,7 +9,7 @@ import kaiStory5 from "../images/kai-story-5.png";
 
 export default function HomePage() {
   return (
-    <Layout selectedNavLink="Home">
+    <Layout selectedNavLink="home">
       <img className={styles.kaiStoryImg} src={kaiStory1} alt="Hi, I'm Kai." />
       <img
         className={styles.kaiStoryImg}

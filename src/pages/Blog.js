@@ -1,17 +1,17 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout.js";
-import styles from "./Blog.module.css";
+import styles from "./blog.module.css";
 
 export default function Blog({ data }) {
   return (
-    <Layout selectedNavLink="Blog">
+    <Layout selectedNavLink="blog">
       <div className={styles.blogList}>
         {data.allMarkdownRemark.nodes.map(({ frontmatter, fields }) => (
           <Link
             key={fields.slug}
-            to={fields.slug}
-            id={fields.slug}
+            to={`/blog${fields.slug}`}
+            id={fields.slug.substr(1)}
             className={styles.blogLink}
           >
             <div className={styles.blogTitle}>
