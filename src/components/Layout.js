@@ -37,7 +37,7 @@ export default function Layout({ children, selectedNavLink }) {
 
         <nav>
           <div className={styles.navContainer}>
-            <div className={styles.navContent}>
+            <div className={styles.navContent} data-nosnippet>
               <Link
                 to="/"
                 className={selectedNavLink === "Home" ? styles.selected : null}
@@ -91,7 +91,7 @@ export default function Layout({ children, selectedNavLink }) {
                 tabIndex="0"
               >
                 lkaiguang@gmail.com
-                <span className={styles.myEmailTooltipText}>
+                <span className={styles.myEmailTooltipText} data-nosnippet>
                   {myEmailTooltipText}
                 </span>
               </span>

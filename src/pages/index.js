@@ -14,7 +14,7 @@ export default function HomePage() {
       <img
         className={styles.kaiStoryImg}
         src={kaiStory2}
-        alt="I do web development"
+        alt="I do web development."
       />
       <img
         className={styles.kaiStoryImg}
@@ -29,7 +29,7 @@ export default function HomePage() {
       <img
         className={styles.kaiStoryImg}
         src={kaiStory5}
-        alt="I enjoy hiking and snowboarding."
+        alt="Welcome to my personal website."
       />
     </Layout>
   );
