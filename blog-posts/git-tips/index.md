@@ -1,6 +1,7 @@
 ---
 title: "Git Tips"
-date: 2020-10-15
+date: 2020-10-28
+originalDate: 2020-10-15
 tags:
   - Git
   - GitHub
@@ -16,6 +17,21 @@ It is always good to check out the [official docs](https://git-scm.com/docs) if 
 $ git config --global user.name "Your Name"
 $ git config --global user.email "yourEmailAddress@users.noreply.github.com"
 ```
+
+## Configure for global gitignore file
+```shell
+$ git config --global core.excludesfile ~/.gitignore_global
+```
+
+Then create a **.gitignore_global** file under the home directory.
+
+## Show all untracked files and untracked directories
+
+```shell
+$ git status -u 
+```
+
+`-u` option defaults to `-uall` which shows all individual files in untracked directories. Without the `-u` option, the command will only show untracked files and directories, but not the files inside of those directories.
 
 ## Show all the commit history including all remotes, branches, tags
 
@@ -91,25 +107,6 @@ $ git rebase -i --root
 $ git branch -d <branch>
 ```
 
-## Delete a remote branch
-
-```shell
-$ git push -d <remote> <branch>
-$ git push <remote> :<branch>   # alternative, using the ref syntax
-```
-
-## Push a local branch to remote and set up remote-tracking
-
-```shell
-$ git push -u <remote> <branch>
-```
-
-## Remove (prune) remote-tracking branches that no longer exist in the remote
-
-```shell
-$ git fetch -p # prune
-```
-
 ## List tags
 
 ```shell
@@ -128,6 +125,33 @@ $ git tag <tag> <commit_hash> # from a different commit
 ```shell
 $ git tag -d <tag>      # single tag
 $ git tag -d $(git tag) # all tags
+```
+
+## Change capitalization of filenames
+
+```shell
+$ git mv example.txt Example.txt
+```
+
+Simply changing the filename by `mv example.txt Example.txt` won't work in macOS because it's case preserving but case insensitive. In the future it will cause path collision. So avoid changing the filename directly; use `git mv` to change filenames.
+
+## Remove (prune) remote-tracking branches that no longer exist in the remote
+
+```shell
+$ git fetch -p # prune
+```
+
+## Push a local branch to remote and set up remote-tracking
+
+```shell
+$ git push -u <remote> <branch>
+```
+
+## Delete a remote branch
+
+```shell
+$ git push -d <remote> <branch>
+$ git push <remote> :<branch>   # alternative, using the ref syntax
 ```
 
 ## Push local tags to remotes

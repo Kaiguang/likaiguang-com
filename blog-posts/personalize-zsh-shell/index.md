@@ -1,6 +1,6 @@
 ---
 title: Personalize Zsh Shell
-date: 2020-06-21
+date: 2020-10-26
 originalDate: 2019-08-24
 tags:
   - Shell
@@ -80,7 +80,7 @@ alias sd='say "process completed."' # (macOS)
 alias history='history 1'
 
 # git
-alias gs='git status'
+alias gs='git status -u'
 alias gc='git commit'
 alias gb='git branch'
 alias gl='git log --remotes --branches --tags --graph --oneline'
