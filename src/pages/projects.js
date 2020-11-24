@@ -7,6 +7,33 @@ export default function Projects() {
     <Layout selectedNavLink="projects">
       <div className={styles.projectContainer}>
         <a
+          href="https://yiyiyili.com/"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.projectName}
+        >
+          Art Shop of Yi
+        </a>
+        <p>
+          <a href="https://yiyiyili.com/" target="_blank" rel="noreferrer">
+            yiyiyili.com
+          </a>
+        </p>
+        <p>Online store for some awesome embroidery arts.</p>
+        <span>Technology used:</span>
+        <ul>
+          <li>Gatsby</li>
+          <li>AWS S3 and CloudFront</li>
+          <li>
+            AWS Serverless Application Model (Lambda <em>Node.js</em>, DynamoDB,
+            API Gateway)
+          </li>
+          <li>Stripe</li>
+        </ul>
+      </div>
+
+      <div className={styles.projectContainer}>
+        <a
           href="https://housework.likaiguang.com/"
           target="_blank"
           rel="noreferrer"
@@ -14,6 +41,15 @@ export default function Projects() {
         >
           Share Housework
         </a>
+        <p>
+          <a
+            href="https://housework.likaiguang.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            housework.likaiguang.com
+          </a>
+        </p>
         <p>
           A web app to track the housework performed by my{" "}
           <s>
@@ -55,8 +91,6 @@ export default function Projects() {
         </ul>
       </div>
 
-      {/* <hr /> */}
-
       <div className={styles.projectContainer}>
         <a
           href="https://renyu.li/"
@@ -66,6 +100,11 @@ export default function Projects() {
         >
           余事
         </a>
+        <p>
+          <a href="https://renyu.li/" target="_blank" rel="noreferrer">
+            renyu.li
+          </a>
+        </p>
         <p>A Chinese poem website, poems are written by Renyu Li.</p>
         <span>Technology used:</span>
         <ul>
