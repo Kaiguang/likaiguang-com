@@ -1,8 +1,54 @@
 import React, { useState } from "react";
-import Layout from "../components/Layout.js";
-import styles from "./Contact.module.css";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+
+import Layout from "../components/Layout";
+
+import styles from "./contact.module.css";
 
 export default function Contact() {
+  const data = useStaticQuery(graphql`
+    {
+      nameIcon: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fixed(width: 32) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      emailIcon: file(relativePath: { eq: "email-icon.png" }) {
+        childImageSharp {
+          fixed(width: 32) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      githubIcon: file(relativePath: { eq: "GitHub-Mark-120px-plus.png" }) {
+        childImageSharp {
+          fixed(width: 32) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      linkedInIcon: file(relativePath: { eq: "LI-In-Bug.png" }) {
+        childImageSharp {
+          fixed(width: 32) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      twitterIcon: file(
+        relativePath: { eq: "Twitter_Social_Icon_Square_Color.png" }
+      ) {
+        childImageSharp {
+          fixed(width: 32) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `);
+
   const [myNameTooltipText, setMyNameTooltipText] = useState("Click to copy");
 
   const handleCopyMyNameClick = () => {
@@ -23,7 +69,7 @@ export default function Contact() {
 
   const handleCopyMyEmailClick = () => {
     const textArea = document.createElement("textarea");
-    textArea.value = "lkaiguang@gmail.com";
+    textArea.value = "hello@likaiguang.com";
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("copy");
@@ -39,73 +85,98 @@ export default function Contact() {
     <Layout selectedNavLink="contact">
       <div className={styles.contactContainer}>
         <code>{`---`}</code>
+
         <code>
-          Name:{" "}
           <span
-            className={styles.hoverAndTooltip}
+            className={`${styles.hoverAndTooltip} ${styles.contactLine}`}
             onClick={handleCopyMyNameClick}
             onKeyPress={handleCopyMyNameClick}
             onMouseLeave={handleMyNameMouseLeave}
             role="button"
             tabIndex="0"
           >
+            <Img
+              fixed={data.nameIcon.childImageSharp.fixed}
+              alt="Name"
+              style={{ backgroundColor: `black` }}
+            />
             Kaiguang Li
             <span className={styles.hoverAndTooltipTooltipText}>
               {myNameTooltipText}
             </span>
           </span>
         </code>
+
         <code>
-          Email:{" "}
           <span
-            className={styles.hoverAndTooltip}
+            className={`${styles.hoverAndTooltip} ${styles.contactLine}`}
             onClick={handleCopyMyEmailClick}
             onKeyPress={handleCopyMyEmailClick}
             onMouseLeave={handleMyEmailMouseLeave}
             role="button"
             tabIndex="0"
           >
-            lkaiguang@gmail.com
+            <Img
+              fixed={data.emailIcon.childImageSharp.fixed}
+              alt="Email"
+              style={{ backgroundColor: `white` }}
+            />
+            hello@likaiguang.com
             <span className={styles.hoverAndTooltipTooltipText}>
               {myEmailTooltipText}
             </span>
           </span>
         </code>
+
         <code>
-          GitHub:{" "}
           <a
+            className={styles.contactLine}
             href="https://github.com/Kaiguang"
             target="_blank"
             rel="noreferrer"
           >
+            <Img
+              fixed={data.githubIcon.childImageSharp.fixed}
+              alt="GitHub"
+              style={{ backgroundColor: `white` }}
+            />
             Kaiguang
           </a>
         </code>
+
         <code>
-          LinkedIn:{" "}
           <a
+            className={styles.contactLine}
             href="https://www.linkedin.com/in/kaiguang-li/"
             target="_blank"
             rel="noreferrer"
           >
+            <Img
+              fixed={data.linkedInIcon.childImageSharp.fixed}
+              alt="LinkedIn"
+              style={{ backgroundColor: `white` }}
+            />
             kaiguang-li
           </a>
         </code>
+
         <code>
-          Twitter:{" "}
           <a
+            className={styles.contactLine}
             href="https://twitter.com/KaiguangLi"
             target="_blank"
             rel="noreferrer"
           >
-            @KaiguangLi
+            <Img
+              fixed={data.twitterIcon.childImageSharp.fixed}
+              alt="Twitter"
+              style={{ backgroundColor: `white` }}
+            />
+            <span>@KaiguangLi</span>
           </a>
         </code>
+
         <code>{`---`}</code>
-        <div className={styles.yawd}>
-          <p>kai.yawd</p>
-          <p>Yet Another Web Developer</p>
-        </div>
       </div>
     </Layout>
   );

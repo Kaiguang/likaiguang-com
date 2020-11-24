@@ -8,7 +8,7 @@ import styles from "./Layout.module.css";
 export default function Layout({ children, selectedNavLink }) {
   const handleCopyMyEmailClick = () => {
     const textArea = document.createElement("textarea");
-    textArea.value = "lkaiguang@gmail.com";
+    textArea.value = "hello@likaiguang.com";
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("copy");
@@ -90,7 +90,7 @@ export default function Layout({ children, selectedNavLink }) {
                 role="button"
                 tabIndex="0"
               >
-                lkaiguang@gmail.com
+                hello@likaiguang.com
                 <span className={styles.myEmailTooltipText} data-nosnippet>
                   {myEmailTooltipText}
                 </span>
