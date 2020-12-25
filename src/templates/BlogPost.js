@@ -13,6 +13,8 @@ export default function BlogPost({ data, pageContext }) {
 
   return (
     <Layout selectedNavLink="blog">
+      <Link to={`/blog#${pageContext.slug.substr(1)}`}>{`Back`}</Link>
+
       <h1>{md.frontmatter.title}</h1>
 
       <div className={styles.frontmatter}>
@@ -39,7 +41,10 @@ export default function BlogPost({ data, pageContext }) {
 
       <div dangerouslySetInnerHTML={{ __html: md.html }} />
 
-      <Link to={`/blog#${pageContext.slug.substr(1)}`}>{`Back`}</Link>
+      <Link
+        to={`/blog#${pageContext.slug.substr(1)}`}
+        className={styles.backButton}
+      >{`Back`}</Link>
     </Layout>
   );
 }
