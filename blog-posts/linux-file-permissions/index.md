@@ -1,11 +1,11 @@
 ---
-title: Linux File Permissions
+title: Linux File Permissions Cheat Sheet
 date: 2020-05-08
 tags:
   - Linux
 ---
 
-Here is a cheat sheet for Linux file permissions for the three groups: user, group, other.
+A cheat sheet for Linux file permissions for the three groups: user, group, other.
 
 ```
 User Group Everyone
