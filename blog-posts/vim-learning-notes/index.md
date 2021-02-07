@@ -1,15 +1,16 @@
 ---
 title: VIM Learning Notes
-date: 2020-10-17
+date: 2020-12-29
+originalDate: 2020-10-17
 tags:
   - Vim
 ---
 
-Today I decided to learn Vim from the official help files. So I started to follow the [offcial help files](https://vimhelp.org/).
+Today I decided to learn Vim from the official help files. So I started to follow the [official help files](https://vimhelp.org/).
 
 There are two parts of the documentation, the **user manual** can be read like a book from start to finish, the **reference manual** is more technical and has precise descriptions of how Vim works.
 
-I started off by reading the user manual which is very easy to understand. A lot of important concepts are well explained there, if you are a beginner defintely start from the [user manual](https://vimhelp.org/usr_toc.txt.html) to get a better understanding of Vim.
+I started off by reading the user manual which is very easy to understand. A lot of important concepts are well explained there, if you are a beginner definitely start from the [user manual](https://vimhelp.org/usr_toc.txt.html) to get a better understanding of Vim.
 
 By the time I got to chapter 4 user_04.txt, I started liking to use Vim to type my text, and using the [quick reference](https://vimhelp.org/quickref.txt.html) started to become helpful.
 
@@ -94,11 +95,11 @@ Look at the user manual for more [marks](https://vimhelp.org/usr_03.txt.html#03.
 
 `CTRL-B` scroll up _(backward)_ N screen, default 1 screen
 
-`zt` `zz` `zb` scroll so that the current cursor postion is at the _top_, middle, or _bottom_
+`zt` `zz` `zb` scroll so that the current cursor position is at the _top_, middle, or _bottom_
 
 ## Search
 
-`/{string}` `?{string}` search forward, or backford for the string
+`/{string}` `?{string}` search forward, or backward for the string
 
 `n` `N` move to the next match, or the opposite direction
 
@@ -120,7 +121,7 @@ The search also works with regular expressions. I won't leave too much notes her
 
 ## File status
 
-`CTRL-G` show the current file name, file path, and cursor postion
+`CTRL-G` show the current file name, file path, and cursor position
 
 ## Insert text
 
@@ -240,6 +241,14 @@ For Vim, tag is a hyperlink.
 
 `CTRL-T` pop tag, go back to the preceding position
 
+## Indent
+
+`==` indent the current line
+
+`=a{` indent the current `{}` block
+
+`gg=G` indent the whole file, `gg` goes to the first line, `=` indent till the `G` last line
+
 ## Quit
 
 `ZZ` write the file and quit
@@ -277,4 +286,6 @@ set ruler
 set showcmd
 " set scrolloff to keep the cursor in the middle of the screen
 set so=100
+" set the automatic indentation spaces for C or C style text
+set cindent shiftwidth=2
 ```
