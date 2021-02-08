@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import SEO from "./SEO.js";
 import Logo from "../images/logo.png";
 import styles from "./Layout.module.css";
 
@@ -24,8 +23,6 @@ export default function Layout({ children, selectedNavLink }) {
 
   return (
     <div className={styles.container}>
-      <SEO title="Kai Homepage" />
-
       <header>
         <div className={styles.headerContainer}>
           <div className={styles.headerContent}>

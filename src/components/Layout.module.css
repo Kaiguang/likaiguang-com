@@ -16,7 +16,7 @@ footer {
 /* background colors */
 header,
 footer {
-  background-color: #051d3e;
+  background: linear-gradient(#15223c, #2e467a);
 }
 nav {
   background-color: #030817;

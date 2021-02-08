@@ -1,11 +1,18 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+
 import Layout from "../components/Layout.js";
+import SEO from "../components/SEO";
 import styles from "./blog.module.css";
 
 export default function Blog({ data }) {
   return (
     <Layout selectedNavLink="blog">
+      <SEO
+        title="Blog"
+        description="Kai's personal blog posts are found here. Some can be treasure."
+      />
+
       <div className={styles.blogList}>
         {data.allMarkdownRemark.nodes.map(({ frontmatter, fields }) => (
           <Link

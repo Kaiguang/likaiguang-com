@@ -1,10 +1,17 @@
 import React from "react";
-import Layout from "../components/Layout.js";
+
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import styles from "./Projects.module.css";
 
 export default function Projects() {
   return (
     <Layout selectedNavLink="projects">
+      <SEO
+        title="Projects"
+        description="Discover what projects Kai has worked on."
+      />
+
       <div className={styles.projectContainer}>
         <a
           href="https://yiyiyili.com/"

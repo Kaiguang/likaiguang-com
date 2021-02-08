@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 import styles from "./contact.module.css";
 
@@ -83,6 +84,11 @@ export default function Contact() {
 
   return (
     <Layout selectedNavLink="contact">
+      <SEO
+        title="Contact Kai"
+        description="Get in touch with Kai, all messages are welcome."
+      />
+
       <div className={styles.contactContainer}>
         <code>{`---`}</code>
 

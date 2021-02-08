@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "gatsby";
-import Layout from "../components/Layout.js";
+
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import styles from "./404.module.css";
 
 export default function NotFoundPage() {
   return (
     <Layout>
+      <SEO title="404: Page Not Found" />
+
       <h1>404: Page Not Found</h1>
       <p>This page no longer exists.</p>
       <p>You can...</p>
