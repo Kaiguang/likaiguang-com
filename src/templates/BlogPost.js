@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import Layout from "../components/Layout.js";
+
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import styles from "./BlogPost.module.css";
 
 export default function BlogPost({ data, pageContext }) {
@@ -13,6 +15,11 @@ export default function BlogPost({ data, pageContext }) {
 
   return (
     <Layout selectedNavLink="blog">
+      <SEO
+        title={md.frontmatter.title}
+        description={md.excerpt ? md.excerpt : md.frontmatter.title}
+      />
+
       <Link to={`/blog#${pageContext.slug.substr(1)}`}>{`Back`}</Link>
 
       <h1>{md.frontmatter.title}</h1>
@@ -62,6 +69,7 @@ export const query = graphql`
       wordCount {
         words
       }
+      excerpt(pruneLength: 200)
     }
   }
 `;
