@@ -1,10 +1,23 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
-import Logo from "../images/logo.png";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+
 import styles from "./Layout.module.css";
 
 export default function Layout({ children, selectedNavLink }) {
+  const data = useStaticQuery(graphql`
+    {
+      logo: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fixed(width: 80) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `);
+
   const handleCopyMyEmailClick = () => {
     const textArea = document.createElement("textarea");
     textArea.value = "hello@likaiguang.com";
@@ -27,7 +40,7 @@ export default function Layout({ children, selectedNavLink }) {
         <div className={styles.headerContainer}>
           <div className={styles.headerContent}>
             <Link to="/">
-              <img src={Logo} alt="Logo of Kai" />
+              <Img fixed={data.logo.childImageSharp.fixed} alt="Logo of Kai" />
             </Link>
           </div>
         </div>

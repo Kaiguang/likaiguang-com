@@ -1,40 +1,40 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 import SEO from "../components/SEO";
 import Layout from "../components/Layout";
-import styles from "./index.module.css";
-import kaiStory1 from "../images/kai-story-1.png";
-import kaiStory2 from "../images/kai-story-2.png";
-import kaiStory3 from "../images/kai-story-3.png";
-import kaiStory4 from "../images/kai-story-4.png";
-import kaiStory5 from "../images/kai-story-5.png";
 
 export default function HomePage() {
+  const data = useStaticQuery(graphql`
+    {
+      rainbowDev: file(relativePath: { eq: "rainbow-developer.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Layout selectedNavLink="home">
       <SEO />
 
-      <img className={styles.kaiStoryImg} src={kaiStory1} alt="Hi, I'm Kai." />
-      <img
-        className={styles.kaiStoryImg}
-        src={kaiStory2}
-        alt="I do web development."
+      <Img
+        fluid={data.rainbowDev.childImageSharp.fluid}
+        alt="Developer, laptop, rainbow and stars"
       />
-      <img
-        className={styles.kaiStoryImg}
-        src={kaiStory3}
-        alt="I grew up in China and went to Canada for college."
-      />
-      <img
-        className={styles.kaiStoryImg}
-        src={kaiStory4}
-        alt="I now live in Edmonton, Alberta."
-      />
-      <img
-        className={styles.kaiStoryImg}
-        src={kaiStory5}
-        alt="Welcome to my personal website."
-      />
+
+      <span
+        style={{
+          fontSize: 32,
+          fontFamily: `'Fredoka One', cursive`,
+        }}
+      >
+        Build responsive and blazing fast websites and apps with Kai
+      </span>
     </Layout>
   );
 }

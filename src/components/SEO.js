@@ -72,6 +72,11 @@ export default function SEO({ description, lang, meta, title }) {
     >
       <title>{defaultTitle}</title>
       <meta name="description" content={defaultDescription} />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+        rel="stylesheet"
+      />
     </Helmet>
   );
 }

@@ -22,11 +22,6 @@ nav {
   background-color: #030817;
 }
 
-header img {
-  display: inline;
-  max-width: 80px;
-}
-
 /* center the containers */
 .headerContainer,
 .navContainer,

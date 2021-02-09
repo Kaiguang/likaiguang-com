@@ -11,6 +11,33 @@ export default function Projects() {
         title="Projects"
         description="Discover what projects Kai has worked on."
       />
+      <div className={styles.projectContainer}>
+        <a
+          href="https://apps.apple.com/ca/app/clean-restaurant/id1551890360"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.projectName}
+        >
+          Clean Restaurant (iOS App)
+        </a>
+        <p>
+          <a
+            href="https://apps.apple.com/ca/app/clean-restaurant/id1551890360"
+            target="_blank"
+            rel="noreferrer"
+          >
+            try it from the iOS App Store
+          </a>
+        </p>
+        <p>
+          <strong>Keep a record of your business's cleaning history.</strong>
+        </p>
+        <span>Technology used:</span>
+        <ul>
+          <li>React Native, Expo</li>
+          <li>SQLite</li>
+        </ul>
+      </div>
 
       <div className={styles.projectContainer}>
         <a
@@ -19,14 +46,18 @@ export default function Projects() {
           rel="noreferrer"
           className={styles.projectName}
         >
-          Art Shop of Yi
+          Yi Embroidery
         </a>
         <p>
           <a href="https://yiyiyili.com/" target="_blank" rel="noreferrer">
             yiyiyili.com
           </a>
         </p>
-        <p>Online store for some awesome embroidery arts.</p>
+        <p>
+          <strong>
+            Online store for some awesome embroidery arts by Yi Li.
+          </strong>
+        </p>
         <span>Technology used:</span>
         <ul>
           <li>Gatsby</li>
@@ -58,13 +89,15 @@ export default function Projects() {
           </a>
         </p>
         <p>
-          A web app to track the housework performed by my{" "}
-          <s>
-            <span className={styles.strikeThrough}>roommate</span>
-          </s>{" "}
-          wife and me. If she does a house chore, she gets paid by me. If I do
-          some housework, I don't need to pay her, which encourages me to do
-          more.
+          <strong>
+            A web app to track the housework performed by my{" "}
+            <s>
+              <span className={styles.strikeThrough}>roommate</span>
+            </s>{" "}
+            wife and me. If she does a house chore, she gets paid by me. If I do
+            some housework, I don't need to pay her, which encourages me to do
+            more.
+          </strong>
         </p>
         <span>Technology used:</span>
         <ul>
@@ -112,7 +145,11 @@ export default function Projects() {
             renyu.li
           </a>
         </p>
-        <p>A Chinese poem website, poems are written by Renyu Li.</p>
+        <p>
+          <strong>
+            A Chinese poem website, poems are written by Renyu Li.
+          </strong>
+        </p>
         <span>Technology used:</span>
         <ul>
           <li>Gatsby</li>
