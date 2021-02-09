@@ -1,6 +1,7 @@
 ---
 title: How to Host Static Gatsby Website on AWS
-date: 2019-08-22
+date: 2021-02-09
+originalDate: 2019-08-22
 tags:
   - AWS
   - Gatsby
@@ -19,19 +20,16 @@ I bought likaiguang.com. Created a hosted zone, hosted zone is a container for r
 
 ## 2. Certificate Manager
 
-I first made sure the region selected was **US East (N. Virginia)**, because later in CloudFront it would only show certificates in this region in the drop-down menu. Then I requested a SSL/TLS public certificate with the following domain names.
+I first made sure the region selected was **US East (N. Virginia) us-east-1**, because later in CloudFront it would only show certificates in this region in the drop-down menu. Then I requested a SSL/TLS public certificate with the following domain names.
 
 - likaiguang.com
 - www.likaiguang.com
 
-Validation was done by the email method, and the emails arrived instantly.
+Validation was done by the CNAME method, AWS added some convenience by automatically adding the DNS records.
 
 ## 3. S3
 
-I created two S3 buckets using a region near me: _US West (Oregon)_. Each bucket was named after the domain name I wanted to use.
-
-- likaiguang.com
-- www.likaiguang.com
+I created an S3 bucket named likaiguang.com using a region near me: _US West (Oregon) us-west-2_.
 
 ### S3 Bucket: likaiguang.com
 
@@ -50,14 +48,13 @@ I set the _Bucket Policy_ per below.
 ```json
 {
   "Version": "2012-10-17",
-  "Id": "Policy1234567890123",
   "Statement": [
     {
-      "Sid": "Stmt4567890123456",
+      "Sid": "LikaiguangPublicRead",
       "Effect": "Allow",
       "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::likaiguang.com/*"
+      "Action": ["s3:GetObject"],
+      "Resource": ["arn:aws:s3:::likaiguang.com/*"]
     }
   ]
 }
@@ -87,21 +84,9 @@ I added script `"deploy": "npm run build && gatsby-plugin-s3 deploy",` in the _p
 
 Ran `npm run deploy` to build and upload my website to the S3 bucket.
 
-### S3 Bucket: www.likaiguang.com
-
-This was a redirecting bucket so I didn't upload anything.
-
-#### Under Tab: Properties
-
-I enabled bucket for static website hosting, selected _Redirect requests_ to _likaiguang.com_ target bucket or domain.
-
-#### Under Tab: Permissions
-
-This was a redirecting bucket, so I left permission default. _Block all public access_ was on, _Bucket Policy_ was empty.
-
 ## 4. CloudFront
 
-In the distribution creation, I set the _Origin Domain Name_ to the bucket endpoint _likaiguang.com.s3-website-us-west-2.amazonaws.com_, not the S3 bucket _likaiguang.com.s3.amazonaws.com_ from the drop-down.
+In the distribution creation, I set the _Origin Domain Name_ to the S3 Website endpoint _likaiguang.com.s3-website-us-west-2.amazonaws.com_, not the S3 API endpoint _likaiguang.com.s3.amazonaws.com_ from the drop-down.
 
 Changed _Viewer Protocol Policy_ to _Redirect HTTP to HTTPS_.
 
@@ -118,9 +103,43 @@ After creation, I was given a domain name for my distribution _dryg4r2wprzbd.clo
 
 ## 5. Back to Route 53
 
-I added two A records both pointing to the same ALIAS _dryg4r2wprzbd.cloudfront.net_ with the following names.
+After the CloudFront distribution was deployed, go back to the Route 53 console.
 
-- likaiguang.com
-- www.likaiguang.com
+I added an A record for likaiguang.com pointing to the ALIAS _dryg4r2wprzbd.cloudfront.net_ CloudFront distribution.
 
-From there, my blog site should be online with https shortly.
+I added a CNAME record for www.likaiguang.com pointing to the same CloudFront distribution.
+
+After the DNS propagate, my website should be online with https shortly.
+
+## 6. Extra Credit: Restrict S3 Bucket Access Policy to a Specific HTTP Referer Header
+
+Note: **Referer** is a misspelling of "Referrer", details can be found on this [Wikipedia page](https://en.wikipedia.org/wiki/HTTP_referer).
+
+Update the CloudFront distribution Origin Custom Headers with a custom Referer header:
+
+- Header Name: Referer
+- Value: likaiguang.com
+
+Then update the S3 Bucket Policy to restrict access to this header with the following condition added.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LikaiguangPublicRead",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": ["s3:GetObject"],
+      "Resource": ["arn:aws:s3:::likaiguang.com/*"],
+      "Condition": {
+        "StringLike": {
+          "aws:Referer": ["likaiguang.com"]
+        }
+      }
+    }
+  ]
+}
+```
+
+Test the website to make sure everything works.
