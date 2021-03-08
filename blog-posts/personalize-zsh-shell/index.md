@@ -1,6 +1,6 @@
 ---
 title: Personalize Zsh Shell
-date: 2020-10-26
+date: 2021-03-08
 originalDate: 2019-08-24
 tags:
   - Shell
@@ -60,7 +60,7 @@ About [`precmd` hook functions](http://zsh.sourceforge.net/Doc/Release/Functions
 
 ```
 # prompt
-export PS1='💚 %n %B%U%~%u%b ${vcs_info_msg_0_}%# '
+export PS1='🦖 %n %B%U%~%u%b ${vcs_info_msg_0_}%# '
 ```
 
 Check Zsh manual or user guide for [prompt expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Prompt-Expansion).
@@ -75,7 +75,7 @@ Check Zsh manual or user guide for [prompt expansion](http://zsh.sourceforge.net
 
 ```shell
 # aliases
-alias ll='ls -alF'
+alias ll='ls -alFG'
 alias sd='say "process completed."' # (macOS)
 alias history='history 1'
 
