@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql, Link, navigate } from "gatsby";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
@@ -19,8 +19,6 @@ export default function BlogPost({ data, pageContext }) {
         title={md.frontmatter.title}
         description={md.excerpt ? md.excerpt : md.frontmatter.title}
       />
-
-      <Link to={`/blog#${pageContext.slug.substr(1)}`}>{`Back`}</Link>
 
       <h1>{md.frontmatter.title}</h1>
 
@@ -47,11 +45,6 @@ export default function BlogPost({ data, pageContext }) {
       </div>
 
       <div dangerouslySetInnerHTML={{ __html: md.html }} />
-
-      <Link
-        to={`/blog#${pageContext.slug.substr(1)}`}
-        className={styles.backButton}
-      >{`Back`}</Link>
     </Layout>
   );
 }

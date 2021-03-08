@@ -18,7 +18,6 @@ export default function Blog({ data }) {
           <Link
             key={fields.slug}
             to={`/blog${fields.slug}`}
-            id={fields.slug.substr(1)}
             className={styles.blogLink}
           >
             <div className={styles.blogTitle}>
