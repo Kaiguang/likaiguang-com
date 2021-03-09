@@ -1,11 +1,11 @@
 import React from "react";
-import { graphql, Link, navigate } from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import styles from "./BlogPost.module.css";
 
-export default function BlogPost({ data, pageContext }) {
+export default function BlogPost({ data }) {
   const md = data.markdownRemark;
 
   const readingTime = () => {

@@ -30,7 +30,7 @@ export default function Projects() {
           </a>
         </p>
         <p>
-          <strong>Keep a record of your business's cleaning history.</strong>
+          <strong>{`Keep a record of your business's cleaning history.`}</strong>
         </p>
         <span>Technology used:</span>
         <ul>
@@ -90,13 +90,13 @@ export default function Projects() {
         </p>
         <p>
           <strong>
-            A web app to track the housework performed by my{" "}
+            {`A web app to track the housework performed by my `}
             <s>
               <span className={styles.strikeThrough}>roommate</span>
-            </s>{" "}
-            wife and me. If she does a house chore, she gets paid by me. If I do
+            </s>
+            {` wife and me. If she does a house chore, she gets paid by me. If I do
             some housework, I don't need to pay her, which encourages me to do
-            more.
+            more.`}
           </strong>
         </p>
         <span>Technology used:</span>
