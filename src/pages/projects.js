@@ -67,6 +67,24 @@ export default function Projects() {
             API Gateway)
           </li>
           <li>Stripe</li>
+          <li>
+            <a
+              href="https://github.com/Kaiguang/yiyiyili.com-gatsby"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub: Kaiguang / yiyiyili.com-gatsby
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/Kaiguang/yiyiyili.com-serverless"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub: Kaiguang / yiyiyili.com-serverless
+            </a>
+          </li>
         </ul>
       </div>
 
