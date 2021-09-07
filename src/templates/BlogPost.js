@@ -1,24 +1,21 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import styles from "./BlogPost.module.css";
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import * as styles from './BlogPost.module.css'
 
 export default function BlogPost({ data }) {
-  const md = data.markdownRemark;
+  const md = data.markdownRemark
 
   const readingTime = () => {
-    const minutes = Math.ceil(md.wordCount.words / 200);
-    return `${minutes} min read`;
-  };
+    const minutes = Math.ceil(md.wordCount.words / 200)
+    return `${minutes} min read`
+  }
 
   return (
     <Layout selectedNavLink="blog">
-      <SEO
-        title={md.frontmatter.title}
-        description={md.excerpt ? md.excerpt : md.frontmatter.title}
-      />
+      <SEO title={md.frontmatter.title} description={md.excerpt ? md.excerpt : md.frontmatter.title} />
 
       <h1>{md.frontmatter.title}</h1>
 
@@ -29,9 +26,7 @@ export default function BlogPost({ data }) {
 
         <div>
           {md.frontmatter.originalDate ? (
-            <em className={styles.originalDate}>
-              Originally posted {md.frontmatter.originalDate}
-            </em>
+            <em className={styles.originalDate}>Originally posted {md.frontmatter.originalDate}</em>
           ) : null}
         </div>
 
@@ -46,7 +41,7 @@ export default function BlogPost({ data }) {
 
       <div dangerouslySetInnerHTML={{ __html: md.html }} />
     </Layout>
-  );
+  )
 }
 
 export const query = graphql`
@@ -65,4 +60,4 @@ export const query = graphql`
       excerpt(pruneLength: 200)
     }
   }
-`;
+`

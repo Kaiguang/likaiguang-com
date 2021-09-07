@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import styles from "./Layout.module.css";
+import * as styles from './Layout.module.css'
 
 export default function Layout({ children, selectedNavLink }) {
   const data = useStaticQuery(graphql`
@@ -16,23 +16,23 @@ export default function Layout({ children, selectedNavLink }) {
         }
       }
     }
-  `);
+  `)
 
   const handleCopyMyEmailClick = () => {
-    const textArea = document.createElement("textarea");
-    textArea.value = "hello@likaiguang.com";
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    textArea.remove();
-    setMyEmailTooltipText("Copied");
-  };
+    const textArea = document.createElement('textarea')
+    textArea.value = 'hello@likaiguang.com'
+    document.body.appendChild(textArea)
+    textArea.select()
+    document.execCommand('copy')
+    textArea.remove()
+    setMyEmailTooltipText('Copied')
+  }
 
   const handleMyEmailMouseLeave = () => {
-    setMyEmailTooltipText("Click to copy");
-  };
+    setMyEmailTooltipText('Click to copy')
+  }
 
-  const [myEmailTooltipText, setMyEmailTooltipText] = useState("Click to copy");
+  const [myEmailTooltipText, setMyEmailTooltipText] = useState('Click to copy')
 
   return (
     <div className={styles.container}>
@@ -48,32 +48,16 @@ export default function Layout({ children, selectedNavLink }) {
         <nav>
           <div className={styles.navContainer}>
             <div className={styles.navContent} data-nosnippet>
-              <Link
-                to="/"
-                className={selectedNavLink === "home" ? styles.selected : null}
-              >
+              <Link to="/" className={selectedNavLink === 'home' ? styles.selected : null}>
                 Home
               </Link>
-              <Link
-                to="/projects"
-                className={
-                  selectedNavLink === "projects" ? styles.selected : null
-                }
-              >
+              <Link to="/projects" className={selectedNavLink === 'projects' ? styles.selected : null}>
                 Projects
               </Link>
-              <Link
-                to="/blog"
-                className={selectedNavLink === "blog" ? styles.selected : null}
-              >
+              <Link to="/blog" className={selectedNavLink === 'blog' ? styles.selected : null}>
                 Blog
               </Link>
-              <Link
-                to="/contact"
-                className={
-                  selectedNavLink === "contact" ? styles.selected : null
-                }
-              >
+              <Link to="/contact" className={selectedNavLink === 'contact' ? styles.selected : null}>
                 Contact
               </Link>
             </div>
@@ -110,10 +94,10 @@ export default function Layout({ children, selectedNavLink }) {
         </div>
       </footer>
     </div>
-  );
+  )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   selectedNavLink: PropTypes.string.isRequired,
-};
+}
