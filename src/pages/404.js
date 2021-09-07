@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { Link } from 'gatsby'
 
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import styles from "./404.module.css";
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import * as styles from './404.module.css'
 
 export default function NotFoundPage() {
   return (
@@ -23,5 +23,5 @@ export default function NotFoundPage() {
         <Link to="/contact">Contact me</Link>
       </div>
     </Layout>
-  );
+  )
 }

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React, { useState } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
-import styles from "./contact.module.css";
+import * as styles from './contact.module.css'
 
 export default function Contact() {
   const data = useStaticQuery(graphql`
@@ -38,9 +38,7 @@ export default function Contact() {
           }
         }
       }
-      twitterIcon: file(
-        relativePath: { eq: "Twitter_Social_Icon_Square_Color.png" }
-      ) {
+      twitterIcon: file(relativePath: { eq: "Twitter_Social_Icon_Square_Color.png" }) {
         childImageSharp {
           fixed(width: 32) {
             ...GatsbyImageSharpFixed
@@ -48,46 +46,43 @@ export default function Contact() {
         }
       }
     }
-  `);
+  `)
 
-  const [myNameTooltipText, setMyNameTooltipText] = useState("Click to copy");
+  const [myNameTooltipText, setMyNameTooltipText] = useState('Click to copy')
 
   const handleCopyMyNameClick = () => {
-    const textArea = document.createElement("textarea");
-    textArea.value = "Kaiguang Li";
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    textArea.remove();
-    setMyNameTooltipText("Copied");
-  };
+    const textArea = document.createElement('textarea')
+    textArea.value = 'Kaiguang Li'
+    document.body.appendChild(textArea)
+    textArea.select()
+    document.execCommand('copy')
+    textArea.remove()
+    setMyNameTooltipText('Copied')
+  }
 
   const handleMyNameMouseLeave = () => {
-    setMyNameTooltipText("Click to copy");
-  };
+    setMyNameTooltipText('Click to copy')
+  }
 
-  const [myEmailTooltipText, setMyEmailTooltipText] = useState("Click to copy");
+  const [myEmailTooltipText, setMyEmailTooltipText] = useState('Click to copy')
 
   const handleCopyMyEmailClick = () => {
-    const textArea = document.createElement("textarea");
-    textArea.value = "hello@likaiguang.com";
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    textArea.remove();
-    setMyEmailTooltipText("Copied");
-  };
+    const textArea = document.createElement('textarea')
+    textArea.value = 'hello@likaiguang.com'
+    document.body.appendChild(textArea)
+    textArea.select()
+    document.execCommand('copy')
+    textArea.remove()
+    setMyEmailTooltipText('Copied')
+  }
 
   const handleMyEmailMouseLeave = () => {
-    setMyEmailTooltipText("Click to copy");
-  };
+    setMyEmailTooltipText('Click to copy')
+  }
 
   return (
     <Layout selectedNavLink="contact">
-      <SEO
-        title="Contact Kai"
-        description="Get in touch with Kai, all messages are welcome."
-      />
+      <SEO title="Contact Kai" description="Get in touch with Kai, all messages are welcome." />
 
       <div className={styles.contactContainer}>
         <code>{`---`}</code>
@@ -101,15 +96,9 @@ export default function Contact() {
             role="button"
             tabIndex="0"
           >
-            <Img
-              fixed={data.nameIcon.childImageSharp.fixed}
-              alt="Name"
-              style={{ backgroundColor: `black` }}
-            />
+            <Img fixed={data.nameIcon.childImageSharp.fixed} alt="Name" style={{ backgroundColor: `black` }} />
             Kaiguang Li
-            <span className={styles.hoverAndTooltipTooltipText}>
-              {myNameTooltipText}
-            </span>
+            <span className={styles.hoverAndTooltipTooltipText}>{myNameTooltipText}</span>
           </span>
         </code>
 
@@ -122,30 +111,15 @@ export default function Contact() {
             role="button"
             tabIndex="0"
           >
-            <Img
-              fixed={data.emailIcon.childImageSharp.fixed}
-              alt="Email"
-              style={{ backgroundColor: `white` }}
-            />
+            <Img fixed={data.emailIcon.childImageSharp.fixed} alt="Email" style={{ backgroundColor: `white` }} />
             hello@likaiguang.com
-            <span className={styles.hoverAndTooltipTooltipText}>
-              {myEmailTooltipText}
-            </span>
+            <span className={styles.hoverAndTooltipTooltipText}>{myEmailTooltipText}</span>
           </span>
         </code>
 
         <code>
-          <a
-            className={styles.contactLine}
-            href="https://github.com/Kaiguang"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Img
-              fixed={data.githubIcon.childImageSharp.fixed}
-              alt="GitHub"
-              style={{ backgroundColor: `white` }}
-            />
+          <a className={styles.contactLine} href="https://github.com/Kaiguang" target="_blank" rel="noreferrer">
+            <Img fixed={data.githubIcon.childImageSharp.fixed} alt="GitHub" style={{ backgroundColor: `white` }} />
             Kaiguang
           </a>
         </code>
@@ -157,27 +131,14 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer"
           >
-            <Img
-              fixed={data.linkedInIcon.childImageSharp.fixed}
-              alt="LinkedIn"
-              style={{ backgroundColor: `white` }}
-            />
+            <Img fixed={data.linkedInIcon.childImageSharp.fixed} alt="LinkedIn" style={{ backgroundColor: `white` }} />
             kaiguang-li
           </a>
         </code>
 
         <code>
-          <a
-            className={styles.contactLine}
-            href="https://twitter.com/KaiguangLi"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Img
-              fixed={data.twitterIcon.childImageSharp.fixed}
-              alt="Twitter"
-              style={{ backgroundColor: `white` }}
-            />
+          <a className={styles.contactLine} href="https://twitter.com/KaiguangLi" target="_blank" rel="noreferrer">
+            <Img fixed={data.twitterIcon.childImageSharp.fixed} alt="Twitter" style={{ backgroundColor: `white` }} />
             <span>@KaiguangLi</span>
           </a>
         </code>
@@ -185,5 +146,5 @@ export default function Contact() {
         <code>{`---`}</code>
       </div>
     </Layout>
-  );
+  )
 }
