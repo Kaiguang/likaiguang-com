@@ -109,16 +109,16 @@ export default function Projects() {
       </div>
 
       <div className={styles.projectContainer}>
-        <a href="https://renyu.li/" target="_blank" rel="noreferrer" className={styles.projectName}>
+        <a href="https://fgjhsq.com/" target="_blank" rel="noreferrer" className={styles.projectName}>
           余事
         </a>
         <p>
-          <a href="https://renyu.li/" target="_blank" rel="noreferrer">
-            renyu.li
+          <a href="https://fgjhsq.com/" target="_blank" rel="noreferrer">
+            fgjhsq.com
           </a>
         </p>
         <p>
-          <strong>A Chinese poem website, poems are written by Renyu Li.</strong>
+          <strong>A Chinese poem website, poems are written by 放歌江海山阙.</strong>
         </p>
         <span>Technology used:</span>
         <ul>
@@ -127,8 +127,8 @@ export default function Projects() {
           <li>AWS CloudFront</li>
           <li>AWS Route 53</li>
           <li>
-            <a href="https://github.com/Kaiguang/renyu-li" target="_blank" rel="noreferrer">
-              GitHub: Kaiguang / renyu-li
+            <a href="https://github.com/Kaiguang/fgjhsq-com" target="_blank" rel="noreferrer">
+              GitHub: Kaiguang / fgjhsq-com
             </a>
           </li>
         </ul>
