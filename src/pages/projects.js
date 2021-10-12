@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import * as styles from './Projects.module.css'
+import * as styles from './projects.module.css'
 
 export default function Projects() {
   return (
