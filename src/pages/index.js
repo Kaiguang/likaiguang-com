@@ -1,40 +1,31 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 import { Seo } from '../components/SeoComponent'
 import Layout from '../components/Layout'
+import * as styles from './index.module.css'
 
 export default function HomePage() {
-   const data = useStaticQuery(graphql`
-      {
-         rainbowDev: file(relativePath: { eq: "rainbow-developer.png" }) {
-            childImageSharp {
-               fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
-               }
-            }
-         }
-      }
-   `)
-
    return (
       <Layout selectedNavLink="home">
          <Seo />
 
-         <Img
-            fluid={data.rainbowDev.childImageSharp.fluid}
-            alt="Developer, laptop, rainbow and stars"
-         />
+         <h1>Kaiguang Li</h1>
+         <span className={styles.pronunciation}>[ kahy-gwahng lee ]</span>
 
-         <span
-            style={{
-               fontSize: 32,
-               fontFamily: `'Fredoka One', cursive`,
-            }}
-         >
-            Build responsive and blazing fast websites and apps with Kai
-         </span>
+         <h2>Synonym</h2>
+         <ul>
+            <li>Kai</li>
+         </ul>
+
+         <h2>Noun</h2>
+         <ol>
+            <li>A person's name</li>
+            <li>A Canadian resident, usually found in Edmonton, AB</li>
+            <li>A software developer</li>
+            <li>A front-end dev for web apps and mobile apps</li>
+            <li>A back-end dev for databases and services</li>
+            <li>A DevOp that publishes human-friendly softwares</li>
+         </ol>
       </Layout>
    )
 }
