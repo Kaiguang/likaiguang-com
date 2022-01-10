@@ -3,5 +3,6 @@
    "trailingComma": "all",
    "semi": false,
    "singleQuote": true,
-   "printWidth": 80
+   "jsxSingleQuote": true,
+   "printWidth": 120
 }
