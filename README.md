@@ -5,7 +5,7 @@ https://likaiguang.com/
 ## Built with
 
 - [Docusaurus](https://docusaurus.io/)
-- Hosted on AWS S3 with CloudFront
+- Hosted on Netlify
 
 ## License
 
