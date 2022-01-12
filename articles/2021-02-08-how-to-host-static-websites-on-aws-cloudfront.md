@@ -15,13 +15,13 @@ I learned there are actually two different kinds of S3 endpoints as origins to b
 
 _Limitation: **The S3 API endpoint** method **will NOT** work with a **Gatsby** site because it will not perform server side redirects (301/302). More details can be found in this [Gatsby article](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/deploying-to-s3-cloudfront/#setting-up-cloudfront)._
 
-_Note: **The S3 Website endpoint** was covered in my [previous blog](https://likaiguang.com/blog/how-to-host-static-gatsby-website-on-aws), but it's missing the part that restricts access to the S3 buckets with a specific Referrer header. Refer to this [YouTube video](https://www.youtube.com/watch?v=DiIaoIcoKNY) for a better explanation (and better practice) from the AWS team._
+_Note: **The S3 Website endpoint** was covered in my [previous blog](../../../2021/02/09/how-to-host-static-gatsby-website-on-aws), but it's missing the part that restricts access to the S3 buckets with a specific Referrer header._
 
 I personally prefer the **S3 API endpoint** way because it only allows CloudFront to access, thus removing the public access from the S3 buckets. However this approach doesn't work well with Gatsby.
 
 I'll use this website likaiguang.com as an example for the below steps.
 
-I'm skipping the details on how to use Route 53 as I'm already pretty good with it as of today (or at least good at googling how to use Route 53 and understanding different types of DNS records). More details can be found at [the same previous blog](https://likaiguang.com/blog/how-to-host-static-gatsby-website-on-aws) for Route 53 and S3 uploads.
+I'm skipping the details on how to use Route 53 as I'm already pretty good with it as of today (or at least good at googling how to use Route 53 and understanding different types of DNS records). More details can be found at [the same previous blog](../../../2021/02/09/how-to-host-static-gatsby-website-on-aws) for Route 53 and S3 uploads.
 
 ## 1. S3
 
