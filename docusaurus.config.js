@@ -32,7 +32,7 @@ const config = {
             id: 'projects',
             path: 'projects',
             routeBasePath: 'projects',
-            editUrl: `${gitHubUrl}/likaiguang-com/edit/main`,
+            editUrl: `${gitHubUrl}/likaiguang-com/tree/main`,
          },
       ],
       [
@@ -41,7 +41,7 @@ const config = {
             id: 'notes',
             path: 'notes',
             routeBasePath: 'notes',
-            editUrl: `${gitHubUrl}/likaiguang-com/edit/main`,
+            editUrl: `${gitHubUrl}/likaiguang-com/tree/main`,
          },
       ],
       [
@@ -50,7 +50,7 @@ const config = {
             id: 'articles',
             path: 'articles',
             routeBasePath: 'articles',
-            editUrl: `${gitHubUrl}/likaiguang-com/edit/main`,
+            editUrl: `${gitHubUrl}/likaiguang-com/tree/main`,
             blogSidebarCount: 15,
             postsPerPage: 2,
             blogTitle: 'Articles',
