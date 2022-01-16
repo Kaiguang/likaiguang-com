@@ -29,10 +29,9 @@ const config = {
       [
          '@docusaurus/plugin-content-docs',
          {
-            id: 'projects',
-            path: 'projects',
-            routeBasePath: 'projects',
-            editUrl: `${gitHubUrl}/likaiguang-com/tree/main`,
+            id: 'about',
+            path: 'about',
+            routeBasePath: '/',
          },
       ],
       [
@@ -66,10 +65,9 @@ const config = {
             title: 'guang Li',
             logo: { alt: 'Logo of Kai', src: 'img/logo.png' },
             items: [
-               { label: 'Projects', type: 'doc', docsPluginId: 'projects', docId: 'index', position: 'left' },
+               { label: 'About', type: 'doc', docsPluginId: 'about', docId: 'kai', position: 'left' },
                { label: 'Notes', type: 'doc', docsPluginId: 'notes', docId: 'notes', position: 'left' },
                { label: 'Articles', to: '/articles', position: 'left' },
-               { label: 'hello@likaiguang.com', position: 'left', to: '/email' },
                {
                   href: gitHubUrl,
                   position: 'right',
