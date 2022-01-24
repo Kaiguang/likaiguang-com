@@ -18,7 +18,7 @@ unset color_prompt force_color_prompt
 
 # Aliases for Git
 alias gp='git pull'
-alias gs='git status -untracked-files'
+alias gs='git status --untracked-files'
 alias gc='git commit'
 alias gb='git branch'
 alias gl='git log --remotes --branches --tags --graph --oneline'
