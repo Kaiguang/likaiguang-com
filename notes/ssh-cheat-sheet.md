@@ -5,7 +5,7 @@
 Generate a key pair with `rsa` key type (algorithm) and `4096` bits in length. Default location of the generated key pair are `~/.ssh/id_rsa` and `~/.ssh/id_rsa.pub`.
 
 ```sh
-ssh-keygen -t rsa -b 4096
+ssh-keygen -t rsa -b 4096 -C comment@comment
 ```
 
 ## ssh
