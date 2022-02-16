@@ -14,11 +14,4 @@ export PS1='%F{green}%n@%m%f:%F{cyan}%~%f${vcs_info_msg_0_}%# '
 # Aliases
 alias ll='ls -alFGh'
 alias history='history 1'
-
-# Aliases for Git
-alias gp='git pull'
-alias gs='git status -u'
-alias gc='git commit'
-alias gb='git branch'
-alias gl='git log --remotes --branches --tags --graph --oneline'
 ```
