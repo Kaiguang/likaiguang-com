@@ -26,13 +26,14 @@ export default function NotePage({ data }: PageProps<DataType>) {
       <PageHead title={`Kai | ${frontmatter.title}`} />
       <NavBar />
       <article className='markdown-body'>
-        <div className='flex items-center'>
-          {frontmatter.tags.map((tag) => (
-            <Tag key={tag} className='mr-1 border py-px text-gray-400'>
-              {tag}
-            </Tag>
-          ))}
-          <Tag className='py-px border text-gray-400'>length: {rawMarkdownBody.length}</Tag>
+        {frontmatter.tags.map((tag) => (
+          <Tag key={tag} className='mr-1 border py-px text-gray-400'>
+            {tag}
+          </Tag>
+        ))}
+        <div className='flex flex-col mt-2'>
+          <span className='text-xs text-gray-400'>{frontmatter.date}</span>
+          <span className='text-xs text-gray-400'>{rawMarkdownBody.length} chars</span>
         </div>
 
         <h1>{frontmatter.title}</h1>
