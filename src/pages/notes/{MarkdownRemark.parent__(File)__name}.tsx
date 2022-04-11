@@ -4,7 +4,6 @@ import '../../css/github-markdown-light.css';
 import { NavBar } from '../../components/NavBar';
 import { PageHead } from '../../components/PageHead';
 import { Tag } from '../../components/Tag';
-import { ArrowLeftIcon } from '../../components/ArrowLeftIcon';
 
 type DataType = {
   markdownRemark: {
@@ -18,17 +17,9 @@ type DataType = {
   };
 };
 
-export default function NotePage({ data, navigate }: PageProps<DataType>) {
+export default function NotePage({ data }: PageProps<DataType>) {
   const { markdownRemark } = data;
   const { frontmatter, html, rawMarkdownBody } = markdownRemark;
-
-  function goBack() {
-    if (window.history.state === null) {
-      navigate('/notes');
-    } else {
-      window.history.back();
-    }
-  }
 
   return (
     <>
@@ -36,15 +27,6 @@ export default function NotePage({ data, navigate }: PageProps<DataType>) {
       <NavBar />
       <article className='markdown-body'>
         <div className='flex items-center'>
-          <button
-            className='mr-1 hover:fill-gray-100 hover:bg-kaibluelight px-2 py-1  border-0 rounded-md'
-            onClick={() => {
-              goBack();
-            }}
-          >
-            <ArrowLeftIcon className='h-6' />
-          </button>
-
           {frontmatter.tags.map((tag) => (
             <Tag key={tag} className='mr-1 border py-px text-gray-400'>
               {tag}
