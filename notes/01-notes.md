@@ -1,3 +1,0 @@
-# Notes
-
-My learning notes.

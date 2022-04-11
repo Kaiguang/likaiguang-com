@@ -1,11 +1,12 @@
-# Kai's Personal Website
+# Kai's Website
 
-https://likaiguang.com/
+https://likaiguang.com
 
-## Built with
+## Techs
 
-- [Docusaurus](https://docusaurus.io/)
-- Hosted on Netlify
+Built with Gatsby.
+
+Hosted on Netlify.
 
 ## License
 

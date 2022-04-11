@@ -1,6 +1,9 @@
-# Git Tips
-
-Date: 2020-10-28
+---
+title: 'Git Tips'
+date: '2020-07-28'
+tags:
+  - Git
+---
 
 I got inspired by this great [git-tips/tips](https://github.com/git-tips/tips) repo and want to generate my own list based on my personal usage.
 
@@ -47,8 +50,8 @@ git log -n <number>
 git log -i --grep=<pattern>
 ```
 
--  `-i` or `--regexp-ignore-case` ignore case
--  `--grep=<pattern>` limit the log messages matching the `<pattern>`
+- `-i` or `--regexp-ignore-case` ignore case
+- `--grep=<pattern>` limit the log messages matching the `<pattern>`
 
 ## Search logs by file or code changed
 
@@ -72,12 +75,12 @@ git log --pretty=format:'%C(yellow)%h%C(reset) - %an %Cgreen[%ar]%Creset %s'
 
 This is just an example, more customization can be achieved.
 
--  `%h` abbreviated commit hash
--  `%an` author name
--  `%ar` author date, relative
--  `%s` subject
--  `%C(yellow)` or `%Cgreen` color specification
--  `%C(reset)` or `%Creset` reset color
+- `%h` abbreviated commit hash
+- `%an` author name
+- `%ar` author date, relative
+- `%s` subject
+- `%C(yellow)` or `%Cgreen` color specification
+- `%C(reset)` or `%Creset` reset color
 
 ## Shows a commit's log message and textual diff
 

@@ -1,4 +1,9 @@
-# SSH Cheat Sheet
+---
+title: 'SSH Cheat Sheet'
+date: '2021-04-15'
+tags:
+  - shell
+---
 
 ## ssh-keygen
 
@@ -24,7 +29,9 @@ ssh -i /path/to/your/private/key/id_rsa user@host
 
 ## ssh_config
 
-```title="~/.ssh/config"
+```plain text
+# file: ~/.ssh/config
+
 Host office-pc
    HostName 123.123.12.3
    User kai

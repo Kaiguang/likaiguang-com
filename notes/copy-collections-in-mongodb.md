@@ -1,6 +1,9 @@
-# Copy Collections in MongoDB
-
-Date: 2019-09-16
+---
+title: 'Copy Collections in MongoDB'
+date: '2019-11-11'
+tags:
+  - database
+---
 
 I want to copy a collection from production db to development db, the two dbs are under the same mongod instance.
 
