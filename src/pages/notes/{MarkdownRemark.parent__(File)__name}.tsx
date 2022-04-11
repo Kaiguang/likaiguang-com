@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import '../../css/github-markdown.css';
+import '../../css/github-markdown-light.css';
 import { NavBar } from '../../components/NavBar';
 import { PageHead } from '../../components/PageHead';
 import { Tag } from '../../components/Tag';
