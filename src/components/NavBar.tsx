@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { PropsWithoutRef, HTMLProps } from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { Logo } from './Logo';
@@ -12,14 +12,16 @@ export function NavBar() {
       </GatsbyLink>
       <NavBarLink path='/projects'>projects</NavBarLink>
       <NavBarLink path='/contact'>contact</NavBarLink>
-      <NavBarLink path='/notes'>
+      <NavBarLink path='/notes' title='notes'>
         <BookIcon className='h-8 self-center pt-2' />
       </NavBarLink>
     </nav>
   );
 }
 
-function NavBarLink({ path, children }: { path: string; children: ReactNode }) {
+type NavBarLinkProps = { path: string } & PropsWithoutRef<HTMLProps<HTMLAnchorElement>>;
+
+function NavBarLink({ path, children, ...props }: NavBarLinkProps) {
   const { pathname } = useLocation();
   const isMatch = new RegExp(`^${path}`, 'gi').test(pathname);
   const className =
@@ -29,7 +31,7 @@ function NavBarLink({ path, children }: { path: string; children: ReactNode }) {
     (isMatch ? `bg-gradient-to-b from-kaiblue to-kaibluelight text-gray-100 fill-gray-100` : '');
 
   return (
-    <GatsbyLink to={path} className={className}>
+    <GatsbyLink to={path} className={className} {...props}>
       {children}
     </GatsbyLink>
   );
