@@ -10,6 +10,12 @@ I found this fun hacker game website called [OverTheWire](https://overthewire.or
 
 It has many different wargames that you can choose.
 
-I started with the Bandit game. As of 2022-01-03, I have finished the game, which is for Linux beginners to get familiar with the Linux system and its basic commands.
+## 2022-01-03
+
+I started with the Bandit game and I have finished the game today, which is for Linux beginners to get familiar with the Linux system and its basic commands.
 
 The Bandit has over 30 levels, and each level has a puzzle that you need to solve to obtain the password to the next level.
+
+## 2022-04-27
+
+It's been a while, I finished the Leviathan game today. It's about Linux commands, mostly used is the `ltrace`.
