@@ -7,7 +7,7 @@ tags:
   - SQL
 ---
 
-I finished reading the book SQL Antipatterns: Avoiding the Pitfalls of Database Programming by Bill Karwin.
+I finished reading the book **SQL Antipatterns: Avoiding the Pitfalls of Database Programming** by _Bill Karwin_.
 
 The book was very inspirational for someone who's new into the SQL programming world. It was from 2010 but surprisingly a lot of the knowledge is still relevant today.
 

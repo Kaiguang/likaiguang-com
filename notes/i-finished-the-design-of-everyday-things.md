@@ -5,7 +5,7 @@ tags:
   - reading
 ---
 
-Today I finished reading the book The Design of Everyday Things, it’s a great introductory book for building my mental model as a designer.
+Today I finished reading the book **The Design of Everyday Things** by _Don Norman_, it’s a great introductory book for building my mental model as a designer.
 
 It starts off with explanations how everyday human interacts with different designs and breaks it down into steps. Once a thing or a process is broken down, it's very easy for the reader to understand. Then it introduces some new terminologies to me such as constraints, affordances, and signifiers. I know the author has other book talking about design which kind of interest me into reading more.
 
