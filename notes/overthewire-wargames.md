@@ -19,3 +19,9 @@ The Bandit has over 30 levels, and each level has a puzzle that you need to solv
 ## 2022-04-27
 
 It's been a while, I finished the Leviathan game today. It's about Linux commands, mostly used is the `ltrace`.
+
+## 2022-05-22
+
+Finished all 6 of Krypton today. It's about cryptography and it's a bit hard for me, I googled some of the answers.
+
+It also touches the hexdump and xor operation.

@@ -2,8 +2,8 @@
 title: 'Git Aliases'
 date: '2021-10-11'
 tags:
-  - config
   - Git
+  - config
 ---
 
 ```plain text
