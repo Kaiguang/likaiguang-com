@@ -25,3 +25,9 @@ It's been a while, I finished the Leviathan game today. It's about Linux command
 Finished all 6 of Krypton today. It's about cryptography and it's a bit hard for me, I googled some of the answers.
 
 It also touches the hexdump and xor operation.
+
+## 2022-06-11
+
+I decided to stop playing Wargames after finishing Krypton.
+
+The next levels are all based on C programming, it's not my main language and I don't have enough knowledge to solve them.
