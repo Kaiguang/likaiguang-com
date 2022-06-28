@@ -32,6 +32,15 @@ git status -u
 
 `-u` option defaults to `-uall` which shows all individual files in untracked directories. Without the `-u` option, the command will only show untracked files and directories, but not the files inside of those directories.
 
+## Show changes between commits, commit and working tree, etc.
+
+```shell
+git diff
+
+# show the numbers of lines changes
+git diff --stat
+```
+
 ## Show all the commit history including all remotes, branches, tags
 
 ```shell
