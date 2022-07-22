@@ -12,8 +12,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "test": "cypress run",
-    "test:cy": "cypress open"
+    "test:cy": "cypress run",
+    "test:cy:open": "cypress open"
   },
   "dependencies": {
     "autoprefixer": "^10.4.4",
