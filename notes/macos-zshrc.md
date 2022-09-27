@@ -10,14 +10,17 @@ tags:
 ```shell
 # file: ~/.zshrc
 
-# Show Git Info
+# git auto completion
+autoload -Uz compinit && compinit
+
+# show git info
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%F{yellow}(%r:%b)%f'
 
-# Prompt
+# prompt
 export PS1='%F{green}%n@%m%f:%F{cyan}%~%f${vcs_info_msg_0_}%# '
 
 # Aliases
