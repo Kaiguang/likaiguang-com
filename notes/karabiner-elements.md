@@ -29,7 +29,7 @@ Press <kbd>caps_lock</kbd> alone to lock / unlock caps.
 
 ## mouse keys
 
-Press <kbd>asd</kbd> simultaneously to enter the mouse keys mode.
+Press <kbd>hyper_key</kbd> + <kbd>q</kbd> to enter the mouse keys mode.
 
 In the mouse keys mode:
 
@@ -131,6 +131,20 @@ In the mouse keys mode:
         {
           "type": "basic",
           "from": {
+            "key_code": "5",
+            "modifiers": {
+              "mandatory": ["shift", "control", "option", "command"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'zoom.us'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "i",
             "modifiers": {
               "mandatory": ["shift", "control", "option", "command"]
@@ -192,20 +206,10 @@ In the mouse keys mode:
         {
           "type": "basic",
           "from": {
+            "key_code": "q",
             "modifiers": {
-              "optional": ["any"]
-            },
-            "simultaneous": [
-              {
-                "key_code": "a"
-              },
-              {
-                "key_code": "s"
-              },
-              {
-                "key_code": "d"
-              }
-            ]
+              "mandatory": ["shift", "control", "option", "command"]
+            }
           },
           "to": [
             {
