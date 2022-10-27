@@ -6,41 +6,22 @@ tags:
   - config
 ---
 
-Sometimes my hands don't want to move over to touch my mouse or trackpad, but how can I still move my cursor and click around?
+Hardly any software uses a combination of 4 modifier keys (shift + control + option + command) for a shortcut, and it's hard to press all 4 keys at the same time,
 
-Sometimes I use a combination of 4 modifier keys for a shortcut, and it's hard to press all 4 buttons at the same time, can I just assign a hyper key to achieve this?
-
-[Karabiner-Elements](https://karabiner-elements.pqrs.org/) lets me customize my keyboard to do these.
-
-- [**hyper key**](#hyper-key): hold <kbd>caps_lock</kbd> for hyper key, tap it to use the actual <kbd>caps_lock</kbd>
-- [**mouse keys**](#mouse-keys): use keyboard to move the cursor and scroll around
+With [Karabiner-Elements](https://karabiner-elements.pqrs.org/) I can change <kbd>caps_lock</kbd> to a hyper key to do this.
 
 ## hyper key
 
 Hold <kbd>caps_lock</kbd> to trigger <kbd>shift</kbd> + <kbd>control</kbd> + <kbd>option</kbd> + <kbd>command</kbd> modifier combo for various shortcuts, for example:
 
-- <kbd>caps_lock</kbd> + <kbd>1</kbd> for Google Chrome
-- <kbd>caps_lock</kbd> + <kbd>2</kbd> for iTerm
-- <kbd>caps_lock</kbd> + <kbd>3</kbd> for Visual Studio Code
-- <kbd>caps_lock</kbd> + <kbd>4</kbd> for Slack
-- For more examples check the `rules` in the JSON below with `"description": "hyper keys"`
+- <kbd>caps_lock</kbd> + <kbd>h</kbd> for Google Chrome
+- <kbd>caps_lock</kbd> + <kbd>j</kbd> for iTerm
+- <kbd>caps_lock</kbd> + <kbd>k</kbd> for Visual Studio Code
+- <kbd>caps_lock</kbd> + <kbd>l</kbd> for Slack
+- <kbd>caps_lock</kbd> + <kbd>;</kbd> for Zoom
+- For more examples check the `rules` in the JSON below with `"description": "hyper-key"`
 
 Press <kbd>caps_lock</kbd> alone to lock / unlock caps.
-
-## mouse keys
-
-Press <kbd>hyper_key</kbd> + <kbd>q</kbd> to enter the mouse keys mode.
-
-In the mouse keys mode:
-
-- Press <kbd>wasd</kbd> to move the cursor
-- Press <kbd>ijkl</kbd> to scroll
-- Hold <kbd>left_shift</kbd> to 5x the movement or scrolling speed
-- Hold <kbd>p</kbd> to 10x the movement or scrolling speed
-- Press <kbd>u</kbd> to left click
-- Press <kbd>o</kbd> to right click
-- Press <kbd>,</kbd> to middle click
-- Press <kbd>q</kbd> to quit the mouse keys mode
 
 ## How to Install
 
@@ -56,7 +37,7 @@ In the mouse keys mode:
   "title": "k-complex-mods",
   "rules": [
     {
-      "description": "hyper keys",
+      "description": "hyper-key",
       "manipulators": [
         {
           "type": "basic",
@@ -67,7 +48,7 @@ In the mouse keys mode:
           "to": [
             {
               "key_code": "left_command",
-              "modifiers": ["shift", "control", "option"]
+              "modifiers": ["left_shift", "left_control", "left_option"]
             }
           ],
           "to_if_alone": [{ "key_code": "caps_lock" }]
@@ -75,7 +56,7 @@ In the mouse keys mode:
         {
           "type": "basic",
           "from": {
-            "key_code": "1",
+            "key_code": "h",
             "modifiers": {
               "mandatory": ["shift", "control", "option", "command"]
             }
@@ -89,7 +70,7 @@ In the mouse keys mode:
         {
           "type": "basic",
           "from": {
-            "key_code": "2",
+            "key_code": "j",
             "modifiers": {
               "mandatory": ["shift", "control", "option", "command"]
             }
@@ -103,7 +84,7 @@ In the mouse keys mode:
         {
           "type": "basic",
           "from": {
-            "key_code": "3",
+            "key_code": "k",
             "modifiers": {
               "mandatory": ["shift", "control", "option", "command"]
             }
@@ -117,7 +98,7 @@ In the mouse keys mode:
         {
           "type": "basic",
           "from": {
-            "key_code": "4",
+            "key_code": "l",
             "modifiers": {
               "mandatory": ["shift", "control", "option", "command"]
             }
@@ -131,7 +112,7 @@ In the mouse keys mode:
         {
           "type": "basic",
           "from": {
-            "key_code": "5",
+            "key_code": "semicolon",
             "modifiers": {
               "mandatory": ["shift", "control", "option", "command"]
             }
@@ -139,370 +120,6 @@ In the mouse keys mode:
           "to": [
             {
               "shell_command": "open -a 'zoom.us'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "i",
-            "modifiers": {
-              "mandatory": ["shift", "control", "option", "command"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "up_arrow"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "mandatory": ["shift", "control", "option", "command"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "down_arrow"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "mandatory": ["shift", "control", "option", "command"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_arrow"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "l",
-            "modifiers": {
-              "mandatory": ["shift", "control", "option", "command"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_arrow"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "mouse keys mode",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "q",
-            "modifiers": {
-              "mandatory": ["shift", "control", "option", "command"]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "mouse_keys_mode",
-                "value": 1
-              }
-            },
-            {
-              "set_notification_message": {
-                "id": "mouse_keys_mode",
-                "text": "mouse keys mode"
-              }
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "q",
-            "modifiers": { "optional": ["any"] }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "mouse_keys_mode",
-                "value": 0
-              }
-            },
-            {
-              "set_notification_message": {
-                "id": "mouse_keys_mode",
-                "text": ""
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "w",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "y": -700 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "a",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "x": -700 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "s",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "y": 700 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "d",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "x": 700 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "left_shift",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "speed_multiplier": 5.0 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "p",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "speed_multiplier": 10.0 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "u",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "pointing_button": "button1" }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "o",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "pointing_button": "button2" }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "comma",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "pointing_button": "button3" }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "i",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "vertical_wheel": -64 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "horizontal_wheel": -64 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "vertical_wheel": 64 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "l",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [{ "mouse_key": { "horizontal_wheel": 64 } }],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
-            }
-          ]
-        },
-
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "h",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "software_function": {
-                "set_mouse_cursor_position": {
-                  "x": "50%",
-                  "y": "50%"
-                }
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "mouse_keys_mode",
-              "value": 1
             }
           ]
         }
