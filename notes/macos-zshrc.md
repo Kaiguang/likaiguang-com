@@ -21,7 +21,7 @@ setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%F{yellow}(%r:%b)%f'
 
 # prompt
-export PS1='%F{green}%n@%m%f:%F{cyan}%~%f${vcs_info_msg_0_}%# '
+export PS1='%F{yellow}[%D{%y-%m-%f} %D{%H:%M:%S}]%f %F{green}%n@%m%f:%F{cyan}%~%f${vcs_info_msg_0_}%# '
 
 # Aliases
 alias ll='ls -alFGh'
