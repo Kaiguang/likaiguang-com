@@ -26,4 +26,10 @@ export PS1='%F{yellow}[%D{%y-%m-%f} %D{%H:%M:%S}]%f %F{green}%n@%m%f:%F{cyan}%~%
 # Aliases
 alias ll='ls -alFGh'
 alias history='history 1'
+
+# terminal tab title
+DISABLE_AUTO_TITLE="true"
+precmd() {
+  echo -ne "\e]1;${PWD##*/}\a"
+}
 ```
