@@ -122,22 +122,6 @@ Press <kbd>caps_lock</kbd> alone to lock / unlock caps.
               "shell_command": "open -a 'zoom.us'"
             }
           ]
-        },
-        {
-          "description": "Map cmd+tab to option+tab, to use the Raycast window switcher instead of the macOS application switcher.",
-          "type": "basic",
-          "from": {
-            "key_code": "tab",
-            "modifiers": {
-              "mandatory": ["command"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "tab",
-              "modifiers": ["left_option"]
-            }
-          ]
         }
       ]
     }
