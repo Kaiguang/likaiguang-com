@@ -56,6 +56,20 @@ Press <kbd>caps_lock</kbd> alone to lock / unlock caps.
         {
           "type": "basic",
           "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": ["shift", "control", "option", "command"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Finder'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "h",
             "modifiers": {
               "mandatory": ["shift", "control", "option", "command"]
@@ -67,6 +81,7 @@ Press <kbd>caps_lock</kbd> alone to lock / unlock caps.
             }
           ]
         },
+
         {
           "type": "basic",
           "from": {
